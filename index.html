@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#091a18">
+<meta name="description" content="Una pequeña sorpresa para Valeria.">
+<title>Una sorpresa para Valeria</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🌼%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:dark;--cream:#fff2c9;--gold:#f8d46e;--muted:#b5c5b9}
+*{box-sizing:border-box}body{margin:0;background:#091a18;color:var(--cream);font-family:Arial,Helvetica,sans-serif;min-height:100svh}button{font:inherit}button:focus-visible{outline:2px solid #fff4bd;outline-offset:7px}button{touch-action:manipulation} [hidden]{display:none!important}
+.world{position:relative;min-height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 62%,#25452d77,transparent 52%),radial-gradient(ellipse at 10% 0%,#223a30aa,transparent 50%),#091a18}
+.world:after{content:"";position:absolute;inset:18px;border:1px solid #dab66520;pointer-events:none;z-index:4}.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;width:3px;height:3px;background:#ffe29b;border-radius:50%;box-shadow:0 0 12px #ffdb80;animation:twinkle var(--time) ease-in-out infinite alternate;animation-delay:var(--delay)}
+@keyframes twinkle{from{opacity:.12;transform:translateY(0)}to{opacity:.8;transform:translateY(-14px)}}
+.intro{position:relative;z-index:5;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 26px;transition:opacity .65s,transform .65s}.intro.leaving{opacity:0;transform:translateY(-18px);pointer-events:none}.intro-inner{max-width:520px}.eyebrow{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:#d8cdab;margin:0 0 24px}h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{font-size:clamp(3.2rem,10vw,5.7rem);line-height:1.03;margin:0 0 22px}h1 em,h2 em{color:var(--gold);font-weight:400} .intro-copy{font-size:1rem;color:var(--muted);line-height:1.8;margin:0 auto 38px;max-width:290px}
+.open{border:1px solid #f3d37b66;background:#ecd07e0c;border-radius:100px;color:var(--cream);padding:17px 28px;cursor:pointer;transition:background .2s,transform .2s;min-height:56px}.open:hover{background:#ecd07e20;transform:translateY(-3px)}.open span{color:var(--gold);margin-left:16px}.tiny{font-size:.75rem;color:#98ab9f;letter-spacing:.04em;margin-top:22px}.seal{display:block;font-size:38px;margin-bottom:30px;filter:drop-shadow(0 0 18px #ffcd6033)}
+.gift{position:relative;z-index:2;min-height:100svh;text-align:center;display:flex;flex-direction:column;align-items:center;padding:53px 28px 34px}.gift .eyebrow{margin-bottom:14px}.gift h2{font-size:clamp(2.8rem,7vw,4.4rem);line-height:1.08;margin:0;opacity:0}.scene{width:min(550px,100%);height:clamp(285px,46svh,430px);position:relative;margin:10px auto 0;flex-shrink:0}.aura{position:absolute;inset:5% -10% 0;background:radial-gradient(ellipse,#d9bd431b,transparent 64%);opacity:0;transition:opacity 2s}.bouquet{position:absolute;left:50%;bottom:15px;width:1px;height:1px}.flower{position:absolute;bottom:0;left:0;height:var(--h);width:4px;transform-origin:50% 100%;transform:rotate(var(--angle));}.growth{position:absolute;inset:0;transform:scaleY(0);transform-origin:bottom}.stem{position:absolute;inset:0;background:linear-gradient(90deg,#315943,#88a660,#3c704c);border-radius:100% 100% 0 0}.leaf{position:absolute;width:55px;height:22px;border-radius:0 90% 0 90%;background:linear-gradient(20deg,#254735,#6b995d);left:1px;bottom:33%;transform:rotate(-32deg);transform-origin:left bottom;box-shadow:inset 0 1px #bdd88b33}.leaf.other{bottom:55%;left:auto;right:1px;transform:rotate(32deg) scaleX(-1);transform-origin:right bottom;width:46px}.head{position:absolute;top:0;left:2px;transform:scale(0);width:0;height:0}.petal{position:absolute;left:-15px;top:-57px;width:30px;height:59px;border-radius:55% 55% 45% 45%;transform-origin:50% 100%;transform:rotate(var(--r));background:linear-gradient(to top,#b37b0e 0%,#e9b42c 26%,#ffdf69 72%,#ffe997);box-shadow:inset 1px 0 2px #fff5ad77}.inner .petal{height:46px;top:-46px;width:24px;left:-12px;background:linear-gradient(to top,#ba790d,#f6c63e 50%,#ffe789);transform:rotate(calc(var(--r) + 15deg))}.center{position:absolute;left:-19px;top:-19px;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#b08635,#715022 67%,#4b351b);box-shadow:0 1px 5px #4e310b77,inset 0 0 0 3px #c6983944}.center:after{content:"";position:absolute;inset:5px;border-radius:50%;background-image:radial-gradient(#edc36888 1px,transparent 1.5px);background-size:5px 5px}.ribbon{position:absolute;width:32px;height:10px;border:1px solid #e8ca7f99;background:#c3a665;bottom:26px;left:-14px;border-radius:3px;transform:rotate(-10deg);opacity:0}.ribbon:after{content:"";position:absolute;top:6px;left:11px;height:38px;width:10px;background:linear-gradient(90deg,#e2c986,#a98742);transform:rotate(-15deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%)}
+.message{position:relative;max-width:400px;opacity:0}.message p{font-size:1rem;line-height:1.85;margin:0;color:#d6dfd3}.message .wish{font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#f5d884;font-size:1.25rem;margin-top:13px}.signature{font-size:.875rem;letter-spacing:.035em;color:#a8b9ac;margin-top:25px}.again{color:#bdc4af;border:0;border-bottom:1px solid #bdc4af44;background:none;font-size:.75rem;padding:10px 2px 5px;margin-top:18px;cursor:pointer;opacity:0}.playing h2,.playing .message,.playing .again{animation:appear 1.3s both}.playing h2{animation-delay:.15s}.playing .message{animation-delay:2s}.playing .again{animation-delay:3s}.playing .aura{opacity:1}.playing .growth{animation:grow 1.7s cubic-bezier(.2,.75,.3,1) both;animation-delay:var(--d)}.playing .head{animation:bloom 1.45s cubic-bezier(.2,.7,.2,1.2) both;animation-delay:calc(var(--d) + .65s)}.playing .ribbon{animation:appear 1s 1.4s both}.sway{position:absolute;inset:0;transform-origin:bottom;animation:sway 5s ease-in-out infinite alternate;animation-delay:var(--d)}
+@keyframes grow{to{transform:scaleY(1)}}@keyframes bloom{to{transform:scale(var(--size))}}@keyframes sway{from{transform:rotate(-1.7deg)}to{transform:rotate(1.7deg)}}@keyframes appear{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}} .mote{position:absolute;border-radius:50%;width:4px;height:4px;background:#ffe299;pointer-events:none;box-shadow:0 0 9px #ffe299;animation:floatAway 2s ease-out forwards;z-index:7}@keyframes floatAway{to{transform:translate(var(--dx),var(--dy));opacity:0}}
+@media(max-width:480px){.gift{padding-top:48px}.scene{height:340px;width:100%;transform:scale(.87);margin-top:-5px;margin-bottom:-25px}.world:after{inset:12px}.gift h2{font-size:3rem}.message p{font-size:1rem}.signature{margin-top:18px}}
+@media(max-height:740px) and (min-width:481px){.gift{padding-top:35px}.scene{height:310px}.gift h2{font-size:3rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.playing .growth{transform:scaleY(1)}.playing .head{transform:scale(var(--size))}.playing h2,.playing .message,.playing .again,.playing .ribbon{opacity:1}}
+</style>
+</head>
+<body>
+<main class="world" id="world">
+<div class="stars" id="stars" aria-hidden="true"></div>
+<section class="intro" id="intro" aria-labelledby="introTitle">
+<div class="intro-inner">
+<span class="seal" aria-hidden="true">✧</span>
+<p class="eyebrow">Un pequeño detalle</p>
+<h1 id="introTitle">Psst…<br><em>Valeria.</em></h1>
+<p class="intro-copy">Hay algo por aquí que<br>quería regalarte hoy.</p>
+<button class="open" id="open" aria-controls="gift">Abre tu sorpresa <span aria-hidden="true">↗</span></button>
+<p class="tiny">Hecho para sacarte una sonrisa.</p>
+</div>
+</section>
+<section class="gift" id="gift" aria-labelledby="giftTitle" hidden>
+<p class="eyebrow">Estas son para ti</p>
+<h2 id="giftTitle" tabindex="-1">Un poquito de <em>sol.</em></h2>
+<div class="scene" role="img" aria-label="Un ramo de siete flores amarillas que florecen suavemente entre pequeñas luces">
+<div class="aura"></div><div class="bouquet" id="bouquet"><div class="ribbon"></div></div>
+</div>
+<div class="message">
+<!-- Puedes personalizar estas líneas y la firma. -->
+<p>Hoy vi flores amarillas y pensé en ti.<br>Así que te hice estas.</p>
+<p class="wish">Espero que te saquen una sonrisa.</p>
+<div class="signature">— Gustavo</div>
+</div>
+<button class="again" id="again">Verlas florecer otra vez</button>
+</section>
+<noscript><style>.intro{display:none}</style><p style="padding:35vh 30px;text-align:center;line-height:2">🌼 Valeria, hoy vi flores amarillas y pensé en ti.<br>Espero que te saquen una sonrisa.<br>— Gustavo<br><small>Activa JavaScript para ver la sorpresa animada.</small></p></noscript>
+</main>
+<script>
+// Todo funciona sin descargas, librerías ni conexión a internet.
+const intro=document.getElementById('intro');
+const gift=document.getElementById('gift');
+const bouquet=document.getElementById('bouquet');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+for(let i=0;i<42;i++){
+ const star=document.createElement('i');star.className='star';
+ star.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--time:${3+Math.random()*5}s;--delay:-${Math.random()*8}s;`;
+ document.getElementById('stars').append(star);
+}
+// Altura, inclinación, tamaño y retraso de cada flor del ramo.
+const flowers=[[215,-35,.77,.15],[265,28,.8,.3],[282,-19,.92,.4],[221,43,.72,.55],[310,5,1,.1],[231,12,.86,.65],[240,-8,.9,.8]];
+for(const [height,angle,size,delay] of flowers){
+ const flower=document.createElement('div');flower.className='flower';
+ flower.style.cssText=`--h:${height}px;--angle:${angle}deg;--size:${size};--d:${delay}s`;
+ const petals=Array.from({length:12},(_,i)=>`<i class="petal" style="--r:${i*30}deg"></i>`).join('');
+ flower.innerHTML=`<div class="sway"><div class="growth"><div class="stem"></div><div class="leaf"></div><div class="leaf other"></div><div class="head">${petals}<div class="inner">${petals}</div><div class="center"></div></div></div></div>`;
+ bouquet.prepend(flower);
+}
+let opening=false;
+document.getElementById('open').addEventListener('click',()=>{
+ if(opening)return;opening=true;intro.classList.add('leaving');
+ setTimeout(()=>{intro.hidden=true;gift.hidden=false;gift.classList.add('playing');document.getElementById('giftTitle').focus({preventScroll:true});},reduced.matches?0:650);
+});
+document.getElementById('again').addEventListener('click',()=>{gift.classList.remove('playing');void gift.offsetWidth;gift.classList.add('playing');});
+document.querySelector('.scene').addEventListener('pointerdown',event=>{
+ if(reduced.matches)return;
+ const bounds=document.getElementById('world').getBoundingClientRect();
+ for(let i=0;i<12;i++){
+ const mote=document.createElement('i');mote.className='mote';mote.setAttribute('aria-hidden','true');
+ mote.style.cssText=`left:${event.clientX-bounds.left}px;top:${event.clientY-bounds.top}px;--dx:${(Math.random()-.5)*160}px;--dy:${-40-Math.random()*140}px;`;
+ document.getElementById('world').append(mote);setTimeout(()=>mote.remove(),2100);
+ }
+});
+</script>
+</body>
+</html>
